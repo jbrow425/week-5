@@ -1,0 +1,24 @@
+{
+  "games": [
+    {
+      "id": "ukjXyUuM",
+      "title": "Grand Theft Auto 5",
+      "genre": "Action"
+    },
+    {
+      "id": "iEuOBYkU",
+      "title": "Persona 5",
+      "genre": "JRPG"
+    },
+    {
+      "id": "0kFaJHB2",
+      "title": "Sonic Colors",
+      "genre": "Adventure"
+    },
+    {
+      "id": "4_We2kBo",
+      "title": "Superman",
+      "genre": "Adventure"
+    }
+  ]
+}
