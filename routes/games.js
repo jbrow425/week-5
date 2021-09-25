@@ -134,6 +134,53 @@ router.post("/", (req, res) => {
 /**
  * @swagger
  * /games/{id}:
+ *  patch:
+ *    summary: Update the video game genre by the id
+ *    tags: [Video Games]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        schema:
+ *          type: string
+ *        required: true
+ *        description: The video game id
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Game'
+ *    responses:
+ *      200:
+ *        description: The video game was updated
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Game'
+ *      404:
+ *        description: The video game was not found
+ *      500:
+ *        description: Some error happened
+ */
+
+
+ router.patch("/:id", (req, res) => {
+	try {
+		req.app.db
+			.get("games")
+			.find({ id: req.params.id })
+			.assign(req.body)
+			.write({ genre: req.params.genre });
+
+		res.send(req.app.db.get("games").find({ id: req.params.id }));
+	} catch (error) {
+		return res.status(500).send(error);
+	}
+});
+
+/**
+ * @swagger
+ * /games/{id}:
  *  put:
  *    summary: Update the video game by the id
  *    tags: [Video Games]
