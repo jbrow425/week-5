@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 3001;
 const morgan = require('morgan');
 const low = require('lowdb');
 const swaggerUi = require('swagger-ui-express');
@@ -24,7 +24,7 @@ const options = {
 		},
 		servers: [
 			{
-				url: "http://localhost:3000",
+				url: "http://localhost:3001",
 			},
 		],
 	},
